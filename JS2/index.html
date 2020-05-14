@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #div-1 {
+            background-color: sandybrown;
+            height: 300px;
+            width: 50%;
+            overflow: auto;
+            float: left;
+        }
+        
+        .pone {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 50px;
+        }
+        
+        .formtwo input {
+            width: 100px;
+            height: 30px;
+            font-size: 15px;
+            background-color: #aaaaaa;
+        }
+        
+        #div-2 {
+            background-color: green;
+            height: 300px;
+            width: 50%;
+            overflow: auto;
+            float: right;
+        }
+        
+        #pp4 {
+            background-color: burlywood;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body onload="onloadone()">
+    <div id="con">
+        <p>javascript</p>
+        <div>jQuery</div>
+        <h5>PHP</h5>
+    </div>
+    <div id="div-1">
+        <input name="names" value="按钮" type="button" onclick="onclicka()"><br>
+        <p class="pone" onmousemove="onmousemoveone()" onmouseout="onmouseoutone()">鼠标经过事件</p>
+        <form action="" id="form-1">
+            姓名：<input type="text" id="xming" name="username" value="请输入您的名字" onfocus="onfocusone()" onblur="onblurone()">
+        </form>
+        请选择你的职业<br>
+        <select name="career" id="test" onblur="onblurone()" onselect="onselectone()">
+        <option  value="">学生</option>
+        <option id="op1" value="">老师</option>
+        <option value="">员工</option> 
+        <option value="">演员</option>
+        <option value="">公务员</option>
+    </select><br>
+        <form action="" class="formtwo">简易的计算机<br>
+            <input name="names" type="text" id="input1" value="">
+            <select name="" id="selectId" class="">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <img src="" alt="">
+        </select>
+            <input name="names" type="text" id="input2" value="">=
+            <input name="names" type="text" id="input3" value="点击得出结果" onfocus="onfocustwo()" onblur="onblurtwo()"><br>
+            <input name="names" id="pp" type="text" value="">
+            <input name="names" type="button" value="时间停止" onclick="ondio()"><br>
+            <input name="names" id="pp2" type="text" value="0">
+            <input name="names" type="button" value="计时器" onclick="timeoutone()">
+            <input name="names" type="button" value="计时器暂停" onclick="timeouttwo()">
+            <input name="names" type="button" value="计时器归零" onclick="timeoutthree()">
+            <p>操作成功</p>
+            <p><a id="aa">10</a>秒后返回主页&emsp;&emsp;<a id="aa2" onclick="clearTimeour()" style="color: red;">暂停</a></p>
+            <p id="pp4" onclick="Historytwo()" onmousemove="onmousemovethree()">返回</p>
+        </form>
+    </div>
+    <div id="div-2">
+        <p id="datep1" onmousemove="onmousemovetwo()" onmouseout="onmouseouttwo()">鼠标移入查看时间</p>
+        <p id="dateyearone">改变后的年</p>
+        <input type="button" value="点击后退" onclick="Historyone()"><br>
+        <p id="pp3">页面网址（url）</p>
+        <input type="button" value="点击查看页面网址" onclick="Locationone()"><br>
+        <textarea id="Navigatorones" cols="50" rows="50"></textarea>
+
+    </div>
+    <script>
+                                                       var dates = new Date();
+                                                       var week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六",];
+                                                       var student = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+                                                       var myarr = student.split(";");
+                                                       for (var i = 0; i < myarr.length; i++) {
+                                                           document.write(myarr[i] + "<br>");
+                                                       }
+                                                       var sum = 0;
+                                                       for (var i = 0; i < myarr.length; i++) {
+                                                           sum = sum + parseInt(myarr[i].slice(3));
+                                                       }
+                                                       document.getElementById("dateyearone").innerHTML = dates.getFullYear() + "年" + dates.getMonth() + "月" + dates.getDay() + "日，" + week[dates.getDay()] + "<br>" + "班级总成绩" + sum + "&emsp;平均成绩" + parseInt(sum / myarr.length);
+
+                                                       var numa = 10, x;
+                                                       function timeoutfore() {
+                                                           document.getElementById("aa").innerHTML = numa;
+                                                           numa = numa - 1;
+                                                           x = setTimeout(timeoutfore, 1000);
+                                                           if (numa == 0) {
+                                                               window.location = "http://www.baidu.com";
+                                                           }
+                                                       }
+                                                       function clearTimeour() {
+                                                           clearTimeout(x);
+                                                       }
+                                                       function Historytwo() {
+                                                           window.history.go(-1);
+                                                       }
+                                                       function onmousemovethree() {
+                                                           document.getElementById("pp4").style.color = "red";
+                                                       }
+        // timeoutfore()
+    </script>
+    3宝珠，1武器1辅助卡片，
+    <script src="JS2-1.js"></script>
+    <script src="JS2-2.js"></script>
+</body>
+
+</html>

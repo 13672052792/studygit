@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #con{
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+<body>
+    <div id="con">
+    </div>
+    <script>
+    var nums = 1;
+    var mainone = document.getElementById("con");
+    var pp = document.createElement("p");
+    pp.id = "message";
+    var textnode = document.createTextNode("想汉三的第"+nums+"秒钟");
+    mainone.appendChild(pp);
+    pp.appendChild(textnode);
+    
+    function timeoutthree(){
+         document.getElementById("message").innerHTML= "想汉三的第"+nums+"秒钟";
+            nums = nums+1;
+            setTimeout(timeoutthree,1000);
+    }
+    timeoutthree();
+    </script>
+</body>
+</html>
